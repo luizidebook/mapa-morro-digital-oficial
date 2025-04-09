@@ -1,0 +1,35 @@
+O erro indica que você tentou criar um commit, mas não adicionou as alterações ao staging area do Git. Para resolver isso, você precisa adicionar os arquivos modificados ou novos ao staging antes de executar o comando git commit.
+
+Passo a Passo para Resolver o Problema
+
+1. Adicionar os Arquivos ao Staging
+   Você pode adicionar todos os arquivos modificados e novos ao staging com o seguinte comando:
+
+git add .
+
+Isso adicionará todos os arquivos (modificados, novos ou deletados) ao staging.
+
+2. Criar o Commit
+   Após adicionar os arquivos ao staging, crie o commit com a mensagem desejada:
+
+git commit -m "Descrição das alterações"
+
+3. Enviar as Alterações para o Repositório Remoto
+   Depois de criar o commit, envie as alterações para o repositório remoto:
+
+git push origin main
+
+4. Verificar o Status do Git
+   Se quiser verificar o status antes de criar o commit, use:
+
+git status
+
+Isso mostrará quais arquivos estão no staging e quais ainda não foram adicionados.
+
+Exemplo Completo
+Se você deseja adicionar todos os arquivos, criar um commit e enviar as alterações, execute os comandos na seguinte ordem:
+
+git add .
+git commit -m "Descrição das alterações"
+git push origin main
+git status
