@@ -1,5 +1,3 @@
-import L from "leaflet";
-import "leaflet-routing-machine";
 
 const API_KEY = "5b3ce3597851110001cf62480e27ce5b5dcf4e75a9813468e027d0d3"; // Substitua pela sua chave OpenRouteService
 

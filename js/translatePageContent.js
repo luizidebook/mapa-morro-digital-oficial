@@ -1,4 +1,4 @@
-// 📁 translatePageContent.js – Tradução dinâmica da interface
+// translatePageContent.js – Tradução dinâmica da interface
 
 let currentLang = "pt";
 let translations = {};

@@ -1,5 +1,4 @@
 // assistant.js - Integração e controle do assistente virtual
-
 import { processUserInput } from "./dialog.js";
 import { speak } from "./voiceSystem.js";
 
