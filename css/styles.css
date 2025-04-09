@@ -10,15 +10,15 @@
   --gray-300: #d1d5db;
   --gray-800: #1f2937;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --radius-sm: 0.25rem;
   --radius: 0.5rem;
   --radius-lg: 0.75rem;
-  --font-sans:
-    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --header-height: 60px;
 }
@@ -61,9 +61,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    opacity 0.5s ease-out,
-    visibility 0.5s ease-out;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }
 
 #loading-overlay.fade-out {
@@ -136,14 +134,14 @@ header {
 header h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: white;
+  color: rgba(9, 9, 9, 0.731);
   margin: 0;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .tagline {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(9, 9, 9, 0.731);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -214,7 +212,6 @@ header h1 {
   bottom: 0;
   left: 0;
   width: 100%;
-  max-height: 60%;
   background: white;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   box-shadow: var(--shadow-lg);
@@ -484,63 +481,147 @@ header h1 {
 /* Submenu flutuante com design moderno */
 #submenu {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 400px;
-  max-height: 70%;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.2); /* Fundo quase transparente */
-  backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 15;
-  overflow: hidden;
-}
-
-.submenu-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.submenu-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--gray-800);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
+  border: 2px solid red;
   border-radius: 50%;
+  z-index: 999999;
+  animation: fadeIn 1s forwards;
 }
 
-.close-button:hover {
-  background-color: var(--gray-100);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-#submenuContainer {
-  padding: 0.5rem 1rem 1rem;
-  overflow-y: auto;
-  max-height: calc(70vh - 56px);
-  background: rgba(255, 255, 255, 0.2); /* Fundo quase transparente */
-  backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  scrollbar-width: thin; /* Para navegadores compatíveis com scrollbar-width */
-  scrollbar-color: rgba(255, 255, 255, 0.4) transparent; /* Cor da barra e do fundo */
+/* Estilo para o destaque do botão "Ensino" */
+.circle-highlight {
+  position: absolute;
+  border: 2px solid red;
+  border-radius: 50%;
+  z-index: 999999;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .control-buttons {
+    position: absolute;
+    top: 58%;
+    left: 42%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10000;
+    flex-direction: column;
+    justify-items: center;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .control-initial-tutorial-buttons {
+    position: absolute;
+    top: 43%;
+    left: 45%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10000;
+    flex-direction: row;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .close-side-btn {
+    position: fixed;
+    top: 70%;
+    right: 13%;
+    background-color: #fff;
+    border: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    z-index: 10000000;
+  }
+
+  /* Estilos para o controle de rota */
+  #route-modal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 2000;
+  }
+
+  .leaflet-routing-container {
+    position: relative;
+  }
+
+  .leaflet-routing-container .leaflet-routing-alt {
+    display: none;
+  }
+
+  .leaflet-routing-container
+    .leaflet-routing-alt.leaflet-routing-alt-minimized {
+    display: block;
+  }
+
+  .leaflet-routing-container button.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  #route-steps {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  /* Modal styles */
+  #assistant-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 45%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 600px;
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #888;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+  }
 }
 
 #submenuContainer::-webkit-scrollbar {
@@ -672,7 +753,6 @@ header h1 {
     left: auto;
     border-radius: var(--radius-lg);
     bottom: 20px;
-    max-height: 80%;
     transform: translateY(0);
   }
 
@@ -914,10 +994,83 @@ igital-test\css\styles.css */ .carousel-modal {
   object-fit: cover; /* Garante que a imagem ocupe todo o espaço do modal */
 }
 
-/* Route Summary */
-.route-summary {
+/* Estilo para o destaque do botão "Ensino" */
+.circle-highlight {
+  position: absolute;
+  border: 2px solid red;
+  border-radius: 50%;
+  z-index: 999;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Adicione esses estilos ao seu arquivo styles.css */
+
+#tutorial-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #4caf50;
+  width: 0;
+  z-index: 1000000;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background-color: #007bff;
+  width: 0%;
+  transition: width 0.5s;
+  z-index: 100000;
+}
+
+@media (max-width: 768px) {
+  .close-side-btn {
+    position: fixed;
+    top: 70%;
+    right: 13%;
+    background-color: #fff;
+    border: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    z-index: 10000000;
+  }
+}
+
+#tutorial-btn {
   position: fixed;
-  bottom: 20%;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10001; /* Above the blocked overlay */
+  pointer-events: auto; /* Enable clicking */
+}
+
+/* Animação para fechar o modal */
+@keyframes closeToEducation {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0)
+      translate(var(--education-btn-x), var(--education-btn-y));
+    opacity: 0;
+  }
+}
+
+/* Estilos para o controle de rota */
+#route-modal {
+  display: none;
+  position: fixed;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
   background: white;
