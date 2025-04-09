@@ -756,12 +756,6 @@ header h1 {
   }
 
   header {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
     padding: 1rem 2rem;
   }
 
